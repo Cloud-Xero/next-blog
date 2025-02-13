@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { formatDate } from 'pliny/utils/formatDate'
-import { CoreContent } from 'pliny/utils/contentlayer'
+import type { CoreContent } from 'pliny/utils/contentlayer'
 import type { Blog } from 'contentlayer/generated'
 import Link from '@/components/Link'
 import Tag from '@/components/Tag'
@@ -34,7 +34,7 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
     <div className="space-y-2 pb-8 pt-6 md:space-y-5">
       <nav className="flex justify-between">
         {!prevPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
+          <button type='button' className="cursor-auto disabled:opacity-50" disabled={!prevPage}>
             Previous
           </button>
         )}
@@ -50,7 +50,7 @@ function Pagination({ totalPages, currentPage }: PaginationProps) {
           {currentPage} of {totalPages}
         </span>
         {!nextPage && (
-          <button className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
+          <button type='button' className="cursor-auto disabled:opacity-50" disabled={!nextPage}>
             Next
           </button>
         )}
@@ -105,6 +105,7 @@ export default function ListLayout({
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
+              <title>Search Icon</title>
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"

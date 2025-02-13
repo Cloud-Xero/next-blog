@@ -21,6 +21,7 @@ const SearchButton = () => {
           className="h-6 w-6 text-gray-900 hover:text-primary-500 dark:text-gray-100
           dark:hover:text-primary-400"
         >
+          <title>Search</title>
           <path
             strokeLinecap="round"
             strokeLinejoin="round"
