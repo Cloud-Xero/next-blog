@@ -2,6 +2,30 @@
 
 # Tailwind Nextjs Starter Blog
 
+## my-log リポジトリの記事をpullしたい時
+```bash
+next-blog % cd my-log
+my-log % git pull origin master
+```
+
+## シンボリックリンク
+```bash
+next-blog % cd data/blog
+blog % CURRENT_DIR=$(pwd)
+blog % SOURCE_DIR=$(cd ../../my-log/blog/jp && pwd)
+blog % cp -rs "$SOURCE_DIR/." .
+```
+- -r: ディレクトリを再帰的にコピー
+- -s: 実際のコピーの代わりにシンボリックリンクを作成
+- 元のディレクトリ構造を維持
+
+既存のシンボリックリンクを削除したい場合
+```bash
+blog % find . -type l -delete
+```
+mdxだと認識するが、mdだとエラーになるので、mdxでも認識するようにする必要がある
+
+
 [![GitHub Repo stars](https://img.shields.io/github/stars/timlrx/tailwind-nextjs-starter-blog?style=social)](https://GitHub.com/timlrx/tailwind-nextjs-starter-blog/stargazers/)
 [![GitHub forks](https://img.shields.io/github/forks/timlrx/tailwind-nextjs-starter-blog?style=social)](https://github.com/timlrx/tailwind-nextjs-starter-blog/forks)
 [![Twitter URL](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Ftimlrxx)](https://x.com/timlrxx)
